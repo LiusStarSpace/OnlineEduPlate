@@ -59,7 +59,17 @@ We are almost done! Just follow these instructions and the database will be setu
 
 1. Load up your postgres and enter the console. Then to create our database, enter:
   ```
-  # create database online_edu_python_db;
+  # # vi /etc/postgresql/xx.xx/main/postgresql.config
+  # # Add remote link:
+  # # listen_addresses = '127.0.0.1'
+  # # vi /etc/postgresql/xx.xx/main/pg_hba.config
+  # # Add:
+  # # host    all             all              0.0.0.0/0              md5
+  # sudo /etc/init.d/postgresql start
+  # service postgresql start
+  # sudo su postgres   
+  # psql
+  postgres=# create database online_edu_python_db;
   ```
 
 2. To confirm it was created, run this line, you should see the database in the output
@@ -74,8 +84,8 @@ We are almost done! Just follow these instructions and the database will be setu
 
 4. If you haven’t created an administrator for your previous projects, create one now by entering:
   ```
-  # CREATE USER django WITH PASSWORD '123password';
-  # GRANT ALL PRIVILEGES ON DATABASE online_edu_python_db to django;
+  postgres=# CREATE USER django WITH PASSWORD '123password';
+  postgres=# GRANT ALL PRIVILEGES ON DATABASE online_edu_python_db to django;
   ```
 
 5. Your database "online_edu_python_db" is now setup with an admin user account "django" using the passowrd "123password”. 
