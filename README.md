@@ -1,5 +1,5 @@
 ![alt tag](https://github.com/LiusStarSpace/OnlineEducation_Python/blob/master/docs/media/logo.png)
-# LiusStarSopace-online_education
+# LiusStarSpace-online_education
 ## Description
 A open-source platform for online course-based learning and education.
 
